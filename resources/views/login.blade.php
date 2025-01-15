@@ -4,7 +4,7 @@
 <div class="hold-transition login-page">
     <div class="login-box">
         <div class="login-logo">
-            <a href="#"><b>Web</b>kasirku</a>
+            <a href="#"><b>Inventory</b>Barang</a>
         </div>
         <div class="card">
             <div class="card-body login-card-body">

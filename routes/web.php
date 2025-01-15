@@ -27,23 +27,23 @@ use App\Http\Controllers\LaporanPenjualanController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::get('/', [HomeController::class, 'index'])->middleware('guest');
-Route::get('/about', [HomeController::class, 'about'])->middleware('guest');
-Route::get('/contact', [HomeController::class, 'contact'])->middleware('guest');
 
+// Redirect root URL to the login page
+Route::get('/', function () {
+    return redirect()->route('login');
+})->middleware('guest');
 
 Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
 Route::post('/login', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout']);
 
-
-
+Route::get('/about', [HomeController::class, 'about'])->middleware('guest');
+Route::get('/contact', [HomeController::class, 'contact'])->middleware('guest');
 
 Route::get('/registrasi', [RegistrasiController::class, 'index'])->middleware('guest');
 Route::post('/registrasi', [RegistrasiController::class, 'store']);
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth', 'admin');
 
-Route::get('/karyawan', [KaryawanController::class, 'karyawan'])->middleware('auth', 'admin');
 Route::get('/karyawan', [KaryawanController::class, 'karyawan'])->name('karyawan')->middleware('auth', 'admin');
 Route::get('/tambahkaryawan', [KaryawanController::class, 'tambah'])->middleware(['auth', 'admin']);
 Route::post('/tambahdata', [KaryawanController::class, 'tambahdata']);
@@ -57,10 +57,8 @@ Route::get('/tampilbarang/{id}', [BarangController::class, 'tampilbarang'])->mid
 Route::post('/updatebarang/{id}', [BarangController::class, 'updatebarang']);
 Route::get('/deletebarang/{id}', [BarangController::class, 'deletebarang'])->middleware('auth', 'admin');
 
-
 Route::post('/tambahcategori', [BarangController::class, 'tambahcategori']);
 Route::get('/deletecategori/{id}', [BarangController::class, 'deletecategori'])->middleware('auth');
-
 
 Route::get('/supplier', [SupplierController::class, 'supplier'])->name('supplier')->middleware('auth');
 Route::post('/tambahsupplier', [SupplierController::class, 'tambahsupplier']);
@@ -73,7 +71,6 @@ Route::post('/tambahpembelian', [PembelianController::class, 'tambahpembelian'])
 Route::get('/tampilpembelian/{id}', [PembelianController::class, 'tampilpembelian'])->middleware('auth');
 Route::post('/updatepembelian/{id}', [PembelianController::class, 'updatepembelian']);
 Route::get('/deletepembelian/{id}', [PembelianController::class, 'deletepembelian'])->middleware('auth');
-
 
 Route::get('/detailpembelian/{id}', [DetailPembelianController::class, 'detailpembelian'])->middleware('auth');
 Route::get('/deletedetailpembelian/{id}', [DetailPembelianController::class, 'deletedetailpembelian'])->middleware('auth');
@@ -89,7 +86,6 @@ Route::get('/deleteretur/{id}', [ReturController::class, 'deleteretur'])->middle
 Route::get('/detailretur/{id}', [DetailReturController::class, 'detailretur'])->middleware('auth');
 Route::get('/deletedetailretur/{id}', [DetailReturController::class, 'deletedetailretur'])->middleware('auth');
 Route::post('/tambahdetailretur', [DetailReturController::class, 'tambahdetailretur']);
-// Define route to get jumlah by barang
 
 Route::get('/get-jumlah-by-detailpembelian', 'App\Http\Controllers\ReturController@getJumlahByDetailPembelian');
 Route::get('/search-barang', [PenjualanController::class, 'search'])->name('search.barang');
@@ -104,10 +100,4 @@ Route::get('/laporanpembelian', [LaporanPembelianController::class, 'laporanpemb
 Route::post('/filterpembelian', [LaporanPembelianController::class, 'filterpembelian'])->name('filterpembelian');
 
 Route::post('/upload-excel', [BarangController::class, 'uploadExcelBarang'])->name('uploadExcelBarang');
-
 Route::post('/upload-excel-pembelian', [DetailPembelianController::class, 'uploadExcelPembelian'])->name('uploadExcelPembelian');
-
-
-
-
-

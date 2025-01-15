@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Webkasirku</title>
+    <title>Inventory Barang</title>
 
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -75,7 +75,7 @@
 
             <a href="/dashboard" class="brand-link">
                 
-                <span class="brand-text font-weight-light ml-3">Webkasirku</span>
+                <span class="brand-text font-weight-light ml-3">Inventory Barang</span>
             </a>
 
             <div class="sidebar">
@@ -115,13 +115,6 @@
         <aside class="control-sidebar control-sidebar-dark">
 
         </aside>
-        <footer class="main-footer">
-            <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
-            All rights reserved.
-            <div class="float-right d-none d-sm-inline-block">
-                <b>Version</b> 3.2.0
-            </div>
-        </footer>
 
 
     </div>

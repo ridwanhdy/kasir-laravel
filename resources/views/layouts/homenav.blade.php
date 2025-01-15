@@ -27,7 +27,7 @@
 <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary navbar-dark" data-bs-theme="dark">
         <div class="container">
-            <p class="navbar-brand mb-0 h1">Webkasirku</p>
+            <p class="navbar-brand mb-0 h1">Inventory Barang</p>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
                 aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -35,13 +35,13 @@
             <div class="collapse navbar-collapse justify-content-center" id="navbarTogglerDemo02">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link{{ ($title === "Home")?' active':'' }}" aria-current="page" href="/">Home</a>
+                        <a class="nav-link{{ ($title === "Home")?' active':'' }}" aria-current="page" href="/"></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ ($title === "About")?' active':'' }}" href="/about">Tentang</a>
+                        <a class="nav-link {{ ($title === "About")?' active':'' }}" href="/about"></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ ($title === "Contact Us")?' active':'' }}" href="/contact">Hubungi Kami</a>
+                        <a class="nav-link {{ ($title === "Contact Us")?' active':'' }}" href="/contact"></a>
                     </li>
                 </ul>
                 <button class="btn btn-dark" type="submit"><a href="/login"  class="text-decoration-none text-white">Login</a></button>

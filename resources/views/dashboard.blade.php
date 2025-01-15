@@ -105,28 +105,21 @@
 
                         <div class="card-footer">
                             <div class="row">
-                                <div class="col-sm-3 col-6">
+                                <div class="col-sm-4 col-6">
                                     <div class="description-block border-right">
                                         <h5 class="description-header">Rp.{{ number_format($totalPenjualan, 2) }}</h5>
                                         <span class="description-text">TOTAL PENJUALAN</span>
                                     </div>
                                 </div>
                     
-                                <div class="col-sm-3 col-6">
-                                    <div class="description-block border-right">
-                                        <h5 class="description-header">Rp.{{ number_format($totalPembelian, 2) }}</h5>
-                                        <span class="description-text">TOTAL PEMBELIAN</span>
-                                    </div>
-                                </div>
-                    
-                                <div class="col-sm-3 col-6">
+                                <div class="col-sm-4 col-6">
                                     <div class="description-block border-right">
                                         <h5 class="description-header">Rp.{{ number_format($totalProfit, 2) }}</h5>
                                         <span class="description-text">TOTAL PROFIT</span>
                                     </div>
                                 </div>
                     
-                                <div class="col-sm-3 col-6">
+                                <div class="col-sm-4 col-6">
                                     <div class="description-block">
                                         <h5 class="description-header">{{ $produkTerjual }}</h5>
                                         <span class="description-text">PRODUK TERJUAL</span>
